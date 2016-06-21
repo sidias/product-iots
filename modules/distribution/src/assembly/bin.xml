@@ -729,6 +729,13 @@
             </outputDirectory>
             <fileMode>755</fileMode>
         </file>
+        <file>
+            <source>src/repository/jaggeryapps/portal/configs/designer.json</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/portal/configs
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
         <!-- End of "portal" app specific modifications -->
         <!-- Copying synapse.properties file -->
         <file>
@@ -998,15 +1005,6 @@
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
-        <!-- Copying webapp-publisher-config.xml -->
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/webapp-publisher-config.xml
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
         <!--cdm plugin config file-->
         <file>
             <source>
@@ -1042,42 +1040,6 @@
             </source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/database</outputDirectory>
             <destName>WSO2DM_DB.h2.db</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <!-- Copying ANDROID SENSE H2 database -->
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/database/AndroidSenseDM_DB.h2.db
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/database</outputDirectory>
-            <destName>AndroidSenseDM_DB.h2.db</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <!-- Copying ARDUINO H2 database -->
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/database/ArduinoDM_DB.h2.db
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/database</outputDirectory>
-            <destName>ArduinoDM_DB.h2.db</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <!-- Copying RASPBERRY-PI H2 database -->
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/database/RaspberryPiDM_DB.h2.db
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/database</outputDirectory>
-            <destName>RaspberryPiDM_DB.h2.db</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <!-- Copying VIRTUAL-FIREALARM H2 database -->
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/database/VirtualFireAlarmDM_DB.h2.db
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/database</outputDirectory>
-            <destName>VirtualFireAlarmDM_DB.h2.db</destName>
             <fileMode>644</fileMode>
         </file>
         <file>
@@ -1254,22 +1216,6 @@
         </file>
         <file>
             <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/mqtt.properties
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/xmpp.properties
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>
                 ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/jwt.properties
             </source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
@@ -1319,21 +1265,25 @@
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
-	    <!-- Copying virtual-fire-alarm-config.xml -->
-	    <file>
-            <source>
-                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/device-mgt-plugins/virtual-fire-alarm/virtual-fire-alarm-config.xml
-            </source>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc/device-mgt-plugins/virtual-fire-alarm</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
         <!-- Adding IoT Analytics Dashboard and gadget CApps -->
         <file>
             <source>
                 ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/carbonapps/org_wso2_carbon_analytics_cdmf-1.0.0.car
             </source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/carbonapps/</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <!--Adding sample device type deployer-->
+        <file>
+            <source>src/samples-deployer.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/</outputDirectory>
+        </file>
+        <!-- Copying webapp-publisher-config.xml -->
+        <file>
+            <source>src/repository/conf/etc/webapp-publisher-config.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
+            <destName>webapp-publisher-config.xml</destName>
+            <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
     </files>
